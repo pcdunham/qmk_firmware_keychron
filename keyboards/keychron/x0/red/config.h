@@ -16,6 +16,7 @@
 
 #pragma once
 
+
 #ifdef LED_MATRIX_ENABLE
 #    define SNLED27351_I2C_ADDRESS_1 SNLED27351_I2C_ADDRESS_GND
 
@@ -23,3 +24,4 @@
 #    define SNLED27351_CURRENT_TUNE \
         { 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60 }
 #endif
+
