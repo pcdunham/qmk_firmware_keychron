@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [WIN_BASE] = LAYOUT(
         KC_ESC,                            CTRL_BTN3,      CS_BTN1,   KC_F3,      KC_F4,     KC_F5,
         KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SA_BTN1,   KC_4,       KC_5,      KC_DEL,
-        KC_TAB,         KC_MS_BTN1,        KC_MS_BTN3,     KC_MS_BTN2,KC_R,       KC_T,
+        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,KC_R,       KC_T,
         KC_CAPS,        CTRL_BTN1,         ALT_BTN1,       CA_BTN1,   KC_S,       KC_G,
         OSM(MOD_LSFT),  C(KC_Z),           C(KC_X),        C(KC_C),   C(KC_V),
         OSM(MOD_LCTL),                     OSM(MOD_LALT),  KC_LGUI,   OSL(WIN_FN),KC_SPC),
@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BLENDER] = LAYOUT(
         KC_ESC,                            CTRL_BTN1,      CTRL_BTN3, CTRL_BTN2,  KC_F4,     KC_F5,
         KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SHFT_BTN2, KC_X,       KC_Y,      KC_Z,
-        KC_TAB,         KC_MS_BTN1,        KC_MS_BTN3,     KC_MS_BTN2,CSA_BTN1,   KC_T,
+        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,CSA_BTN1,   KC_T,
         KC_CAPS,        CTRL_BTN1,         ALT_BTN1,       CA_BTN1,   ALT_BTN3,    KC_G,
         OSM(MOD_LSFT),  C(KC_Z),           C(KC_X),        C(KC_C),   C(KC_V),
         OSM(MOD_LCTL),                     OSM(MOD_LALT),  KC_LGUI,   OSL(WIN_FN),KC_SPC),
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [PLASTICITY] = LAYOUT(
         KC_ESC,                            CTRL_BTN3,      CS_BTN1,   KC_F3,      KC_F4,     KC_F5,
         KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SA_BTN1,   KC_W,       KC_Y,      KC_DEL,
-        KC_TAB,         KC_MS_BTN1,        KC_MS_BTN3,     KC_MS_BTN2,CSA_BTN1,   KC_T,
+        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,CSA_BTN1,   KC_T,
         KC_CAPS,        CTRL_BTN1,         ALT_BTN1,       CA_BTN1,   KC_S,       KC_G,
         OSM(MOD_LSFT),  C(KC_Z),           C(KC_X),        C(KC_C),   C(KC_V),
         OSM(MOD_LCTL),                     OSM(MOD_LALT),  KC_LGUI,   OSL(WIN_FN),KC_SPC),
@@ -102,9 +102,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LCTL);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);  // Delay to ensure modifier is active
-                register_code(KC_MS_BTN1);
+                register_code(QK_MOUSE_BUTTON_1);
             } else {
-                unregister_code(KC_MS_BTN1);
+                unregister_code(QK_MOUSE_BUTTON_1);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
                 unregister_code(KC_LCTL);
             }
@@ -114,10 +114,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LCTL);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
-                register_code(KC_MS_BTN2);
+                register_code(QK_MOUSE_BUTTON_2);
 
             } else {
-                unregister_code(KC_MS_BTN2);
+                unregister_code(QK_MOUSE_BUTTON_2);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
                 unregister_code(KC_LCTL);
             }
@@ -127,10 +127,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LCTL);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
-                register_code(KC_MS_BTN3);
+                register_code(QK_MOUSE_BUTTON_3);
 
             } else {
-                unregister_code(KC_MS_BTN3);
+                unregister_code(QK_MOUSE_BUTTON_3);
                 unregister_code(KC_LCTL);
             }
             return false;
@@ -139,10 +139,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LSFT);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
-                register_code(KC_MS_BTN1);
+                register_code(QK_MOUSE_BUTTON_1);
 
             } else {
-                unregister_code(KC_MS_BTN1);
+                unregister_code(QK_MOUSE_BUTTON_1);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
                 unregister_code(KC_LSFT);
             }
@@ -152,10 +152,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LSFT);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
-                register_code(KC_MS_BTN2);
+                register_code(QK_MOUSE_BUTTON_2);
 
             } else {
-                unregister_code(KC_MS_BTN2);
+                unregister_code(QK_MOUSE_BUTTON_2);
                 unregister_code(KC_LSFT);
             }
             return false;
@@ -164,10 +164,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LSFT);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
-                register_code(KC_MS_BTN3);
+                register_code(QK_MOUSE_BUTTON_3);
 
             } else {
-                unregister_code(KC_MS_BTN3);
+                unregister_code(QK_MOUSE_BUTTON_3);
                 unregister_code(KC_LSFT);
             }
             return false;
@@ -176,10 +176,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LALT);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
-                register_code(KC_MS_BTN1);
+                register_code(QK_MOUSE_BUTTON_1);
 
             } else {
-                unregister_code(KC_MS_BTN1);
+                unregister_code(QK_MOUSE_BUTTON_1);
                 unregister_code(KC_LALT);
             }
             return false;
@@ -188,10 +188,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LALT);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
-                register_code(KC_MS_BTN2);
+                register_code(QK_MOUSE_BUTTON_2);
 
             } else {
-                unregister_code(KC_MS_BTN2);
+                unregister_code(QK_MOUSE_BUTTON_2);
                 unregister_code(KC_LALT);
             }
             return false;
@@ -200,9 +200,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 register_code(KC_LALT);
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
-                register_code(KC_MS_BTN3);
+                register_code(QK_MOUSE_BUTTON_3);
             } else {
-                unregister_code(KC_MS_BTN3);
+                unregister_code(QK_MOUSE_BUTTON_3);
                 unregister_code(KC_LALT);
             }
             return false;
@@ -215,10 +215,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 // Wait a few milliseconds to ensure modifiers are active
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
                 // Now register Mouse Button 1
-                register_code(KC_MS_BTN1);
+                register_code(QK_MOUSE_BUTTON_1);
             } else {
                 // On release, unregister Mouse Button 1 and both modifiers
-                unregister_code(KC_MS_BTN1);
+                unregister_code(QK_MOUSE_BUTTON_1);
                 unregister_code(KC_LSFT);
                 unregister_code(KC_LALT);
             }
@@ -232,10 +232,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 // Wait a few milliseconds to ensure modifiers are active
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
                 // Now register Mouse Button 1
-                register_code(KC_MS_BTN1);
+                register_code(QK_MOUSE_BUTTON_1);
             } else {
                 // On release, unregister Mouse Button 1 and both modifiers
-                unregister_code(KC_MS_BTN1);
+                unregister_code(QK_MOUSE_BUTTON_1);
                 unregister_code(KC_LSFT);
                 unregister_code(KC_LCTL);
             }
@@ -249,10 +249,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 // Wait a few milliseconds to ensure modifiers are active
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
                 // Now register Mouse Button 1
-                register_code(KC_MS_BTN1);
+                register_code(QK_MOUSE_BUTTON_1);
             } else {
                 // On release, unregister Mouse Button 1 and both modifiers
-                unregister_code(KC_MS_BTN1);
+                unregister_code(QK_MOUSE_BUTTON_1);
                 unregister_code(KC_LALT);
                 unregister_code(KC_LCTL);
             }
@@ -267,10 +267,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 // Wait a few milliseconds to ensure modifiers are active
                 wait_ms(CUSTOM_KEY_WAIT_TIME);
                 // Now register Mouse Button 1
-                register_code(KC_MS_BTN1);
+                register_code(QK_MOUSE_BUTTON_1);
             } else {
                 // On release, unregister Mouse Button 1 and modifiers
-                unregister_code(KC_MS_BTN1);
+                unregister_code(QK_MOUSE_BUTTON_1);
                 unregister_code(KC_LALT);
                 unregister_code(KC_LSFT);
                 unregister_code(KC_LCTL);
