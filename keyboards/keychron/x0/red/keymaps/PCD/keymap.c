@@ -58,24 +58,24 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [WIN_BASE] = LAYOUT(
         KC_ESC,                            CTRL_BTN3,      CS_BTN1,   KC_F3,      KC_F4,     KC_F5,
-        KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SA_BTN1,   KC_4,       KC_5,      KC_DEL,
-        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,KC_R,       KC_T,
+        KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SA_BTN1,   KC_X,       KC_Y,      KC_DEL,
+        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,    KC_R,      KC_T,
         KC_CAPS,        CTRL_BTN1,         ALT_BTN1,       CA_BTN1,   KC_S,       KC_G,
         OSM(MOD_LSFT),  C(KC_Z),           C(KC_X),        C(KC_C),   C(KC_V),
         OSM(MOD_LCTL),                     OSM(MOD_LALT),  KC_LGUI,   OSL(WIN_FN),KC_SPC),
 
     [BLENDER] = LAYOUT(
-        KC_ESC,                            CTRL_BTN1,      CTRL_BTN3, CTRL_BTN2,  KC_F4,     KC_F5,
-        KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SHFT_BTN2, KC_X,       KC_Y,      KC_Z,
-        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,CSA_BTN1,   KC_T,
-        KC_CAPS,        CTRL_BTN1,         ALT_BTN1,       CA_BTN1,   ALT_BTN3,    KC_G,
+        KC_ESC,                            CTRL_BTN3,      CS_BTN1,   KC_F3,      KC_F4,     KC_F5,
+        KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SA_BTN1,   KC_X,       KC_Y,      KC_Z,
+        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,    CSA_BTN1,  KC_T,
+        KC_CAPS,        CTRL_BTN1,         ALT_BTN1,       ALT_BTN3,  CA_BTN1,    KC_G,
         OSM(MOD_LSFT),  C(KC_Z),           C(KC_X),        C(KC_C),   C(KC_V),
         OSM(MOD_LCTL),                     OSM(MOD_LALT),  KC_LGUI,   OSL(WIN_FN),KC_SPC),
 
     [PLASTICITY] = LAYOUT(
         KC_ESC,                            CTRL_BTN3,      CS_BTN1,   KC_F3,      KC_F4,     KC_F5,
-        KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SA_BTN1,   KC_W,       KC_Y,      KC_DEL,
-        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,CSA_BTN1,   KC_T,
+        KC_GRV,         SHFT_BTN1,         SHFT_BTN3,      SA_BTN1,   KC_X,       KC_Y,      KC_DEL,
+        KC_TAB,         QK_MOUSE_BUTTON_1,QK_MOUSE_BUTTON_3,QK_MOUSE_BUTTON_2,    CSA_BTN1,  KC_T,
         KC_CAPS,        CTRL_BTN1,         ALT_BTN1,       CA_BTN1,   KC_S,       KC_G,
         OSM(MOD_LSFT),  C(KC_Z),           C(KC_X),        C(KC_C),   C(KC_V),
         OSM(MOD_LCTL),                     OSM(MOD_LALT),  KC_LGUI,   OSL(WIN_FN),KC_SPC),
